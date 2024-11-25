@@ -1,0 +1,30 @@
+body {
+    overflow: hidden;
+}
+
+div{
+    --mv1: 0px;
+    --rt1: 0rad;
+    --mv2: 0px;
+    --rt2: 0rad;
+    --mv3: 0px;
+    --rt3: 0rad;
+    transition-property: transform, color;
+    transition-duration: 1s, 1s;
+}
+
+div.mvdown1{
+    transform: rotate(var(--rt1)) translateY(var(--mv1));
+}
+
+div.mvdown2{
+    transform: rotate(var(--rt2)) translateY(var(--mv2));
+}
+
+div.mvdown3{
+    transform: rotate(var(--rt3)) translateY(var(--mv3));
+}
+
+div.off{
+    color: transparent;
+}

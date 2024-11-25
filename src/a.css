@@ -1,0 +1,81 @@
+/* <a> general css */
+html{
+    --rich-black: #0F0F16;
+    --space-cadet: #3B3B59;
+    --dim-gray: #6A6A80;
+    --white-smoke: #F7F6F3;
+    --auburn: #A62639;
+    --fire_auburn: #d3661d;
+
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* <a> general css */
+a.normal{
+    padding: 10px;
+    align-content: center;
+    text-decoration: none;
+
+    color: var(--dim-gray);
+}
+
+a:hover.normal{
+    animation: glowing 1s infinite;
+    background: linear-gradient(0turn, var(--auburn), var(--fire_auburn));
+    background-clip: text;
+    color: transparent;
+
+    --rotate: 0;
+}
+
+@keyframes glowing {
+    0%{
+        background: linear-gradient(0turn, var(--auburn), var(--fire_auburn));
+        background-clip: text;
+    }
+    10%{
+        background: linear-gradient(0.1turn, var(--auburn), var(--fire_auburn));
+        background-clip: text;
+    }
+    20%{
+        background: linear-gradient(0.2turn, var(--auburn), var(--fire_auburn));
+        background-clip: text;
+    }
+    30%{
+        background: linear-gradient(0.3turn, var(--auburn), var(--fire_auburn));
+        background-clip: text;
+    }
+    40%{
+        background: linear-gradient(0.4turn, var(--auburn), var(--fire_auburn));
+        background-clip: text;
+    }
+    50%{
+        background: linear-gradient(0.5turn, var(--auburn), var(--fire_auburn));
+        background-clip: text;
+    }
+    60%{
+        background: linear-gradient(0.6turn, var(--auburn), var(--fire_auburn));
+        background-clip: text;
+    }
+    70%{
+        background: linear-gradient(0.7turn, var(--auburn), var(--fire_auburn));
+        background-clip: text;
+    }
+    80%{
+        background: linear-gradient(0.8turn, var(--auburn), var(--fire_auburn));
+        background-clip: text;
+    }
+    90%{
+        background: linear-gradient(0.9turn, var(--auburn), var(--fire_auburn));
+        background-clip: text;
+    }
+    100%{
+        background: linear-gradient(1turn, var(--auburn), var(--fire_auburn));
+        background-clip: text;
+    }
+}
+
+/* <a> page link */
