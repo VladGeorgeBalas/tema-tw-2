@@ -2,8 +2,9 @@ body{
     background-color: var(--white-smoke);
     color: var(--rich-black);
 
+    padding: 5%;
 
     --calc-width: min(100vw, 1000px);
     width: var(--calc-width);
-    margin-left: calc((100vw - var(--calc-width))/2);
+    margin-left: calc((100vw - 1.1 * var(--calc-width))/2);
 }
