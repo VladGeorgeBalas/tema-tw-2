@@ -6,25 +6,34 @@
     <link rel="stylesheet" href="standard.css">
 </head>
 <body>
-
-
     <!-- meniu + burger menu -->
     <div class = "menu">
-        <div id = "menu_button" state="unclicked">
-            Click me!
-        </div>
+        <h1><div id = "menu_button" state = "clicked">
+            <<<
+        </div></h1>
 
-        <div class = "options_container">
-            <div class = "option"></div>
+        <div class = "options_container" style = "display: flex; flex-direction: column;">
+            <a class = "option" href = "www.google.com">
+                Option 1
+            </a>
+            <a class = "option">
+                Option 2
+            </a>
+            <a class = "option">
+                Option 3
+            </a>
         </div>
     </div>
 
-    <!-- banner -->
-    <div class = "banner"></div>
+
 
     <!-- continut -->
     <div class = "body">
-        <div class = "body_centered_container"></div>
+        <!-- banner -->
+        <div class = "body_centered_container" type = "banner"></div>
+
+        <!-- blockuri -->
+        <div class = "body_centered_container" type = "header"></div>
         <div class = "body_centered_container"></div>
         <div class = "body_centered_container"></div>
     </div>
