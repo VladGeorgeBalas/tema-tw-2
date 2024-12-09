@@ -16,8 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if(document.documentElement != null) {
         if (window.innerWidth < window.innerHeight) {
             document.documentElement.style.setProperty("--menu-width", "100vw");
+            document.documentElement.style.setProperty("--menu-font-size", "5vh");
         } else {
             document.documentElement.style.setProperty("--menu-width", "10vw");
+            document.documentElement.style.setProperty("--menu-font-size", "2.5vh");
         }
     }
     else
