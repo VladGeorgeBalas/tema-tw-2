@@ -4,11 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (event.target instanceof Element) {
             if(event.target.getAttribute("state") === "unclicked") {
                 event.target.setAttribute("state", "clicked");
-                event.target.textContent = "<<<"
+                event.target.textContent = "<"
             }
             else {
                 event.target.setAttribute("state", "unclicked");
-                event.target.textContent = "///"
+                event.target.textContent = "☰"
             }
         }
     });
@@ -16,10 +16,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if(document.documentElement != null) {
         if (window.innerWidth < window.innerHeight) {
             document.documentElement.style.setProperty("--menu-width", "100vw");
-            document.documentElement.style.setProperty("--menu-font-size", "5vh");
+            document.documentElement.style.setProperty("--menu-font-size", "10vh");
         } else {
-            document.documentElement.style.setProperty("--menu-width", "10vw");
-            document.documentElement.style.setProperty("--menu-font-size", "2.5vh");
+            document.documentElement.style.setProperty("--menu-width", "auto");
+            document.documentElement.style.setProperty("--menu-font-size", "5vh");
         }
     }
     else

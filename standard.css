@@ -1,7 +1,7 @@
 html{
     /* menu variables */
-    --menu-width: 10vw;
-    --menu-font-size: 5vh;
+    --menu-width: fit-content;
+    --menu-font-size: 10vh;
 
     /* banner variables */
     --banner-height: 10vh;
@@ -21,15 +21,15 @@ body{
 div.menu{
     transition: all 0.3s ease-in-out;
 
-    /*font-size: var(--menu-font-size);*/
+    padding: 0;
 }
 div#menu_button{
-    position: relative;
+    position: absolute;
 
     top: calc(min(var(--menu-font-size) / 2, var(--minimal-padding) /4));
     left: calc(min(var(--menu-font-size) / 2, var(--minimal-padding) /4));
 
-    font-size: min(var(--menu-font-size), var(--minimal-padding) / 2);
+    font-size: min(40px, var(--minimal-padding) / 2);
 }
 
 div.menu:has(div#menu_button[state = "unclicked"]){
@@ -38,7 +38,7 @@ div.menu:has(div#menu_button[state = "unclicked"]){
     left: 0;
     top: 0;
 
-    width: calc(var(--menu-width) / 8);
+    width: 100px;
     height: 100%;
 
     border-radius: 0 10px 10px 0;
@@ -47,13 +47,14 @@ div.menu:has(div#menu_button[state = "unclicked"]){
 
     z-index: 1;
     transition-delay: 0.3s;
+
+
+    border: none;
 }
 
 a.option{
     transition-delay: 0s;
     transition: all 0.3s ease-in-out;
-
-    color: black;
 
     pointer-events: auto;
     cursor: pointer;
@@ -70,30 +71,55 @@ div.menu:has(div#menu_button[state = "unclicked"]) > div.options_container > a.o
     transition-duration: 0.3s;
 }
 
+div.menu:has(div#menu_button[state = "unclicked"]) > div.options_container > a.option{
+    color: transparent;
+
+    pointer-events: none;
+    cursor: default;
+
+    transition-duration: 0.3s;
+}
+
+div.options_container{
+    height: 25%;
+    justify-content: space-around;
+}
+
 div.menu:has(div#menu_button[state = "clicked"]) {
     position: absolute;
 
     left: 0;
     top: 0;
 
-    width: var(--menu-width);
+    width: var(--menu-width) ;
     height: 100%;
 
     border-radius: 0 10px 10px 0;
+    padding: 5%;
 
-    background: blue;
+    background: var(--dim-gray);
 
     z-index: 1;
     overflow: hidden;
+
+    border: var(--rich-black) solid 1px;
 }
 
 div.menu:has(div#menu_button[state = "clicked"]) > div.options_container > a.option{
-    color: black;
+    /*color: var(--rich-black);*/
 
     pointer-events: auto;
     cursor: pointer;
 
     transition-duration: 0.3s;
+}
+
+div.menu:has(div#menu_button[state = "unclicked"]) > div.options_container > a.option{
+    /*color: var(--rich-black);*/
+
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 div.body{
@@ -105,7 +131,7 @@ div.body{
     width: 100%;
     height: 100%;
 
-    background: white;
+    background: var(--white-smoke);
 
     padding: 0;
     margin: 0;
@@ -115,35 +141,60 @@ div.body{
 div.body_centered_container{
     position: relative;
 
+    padding: 2%;
+
     top: 0;
     left: var(--calculated-left-offset);
 
-    background: #F7F6F3;
+    background: var(--white-smoke);
     border-radius: 10px;
-    border: black solid 1px;
+    border: var(--rich-black) solid 1px;
 
     width: calc(100% - var(--calculated-left-offset) * 2);
-    height: 100px;
+    height: fit-content;
 }
 
 div.body_centered_container[type = "banner"]{
-    background: red;
+    background: var(--dim-gray);
     border-radius: 0 0 10px 10px;
 
-    height: 25vh;
+    height: 10vh;
 }
 div.body_centered_container[type = "text"]{
-    background: red;
     border-radius: 0 0 10px 10px;
 }
-div.body_centered_container[type = "paragraph"]{
 
+div.body_centered_container[type = "paragraph"]{
 }
 
 div.body_centered_container[type = "header"]{
     border-radius: 10px 10px 0 0;
+
+    text-align: center;
+    height: auto;
+
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
-div.body_centered_container[type = "header"] + div.body_centered_container{
+div.body_centered_container[type = "image"]{
+    height: fit-content;
+}
+
+div.body_centered_container[type = "header"] + *.body_centered_container{
     border-radius: 0 0 10px 10px;
+}
+
+img.body_centered_container{
+    position: relative;
+
+    top: 0;
+    left: var(--calculated-left-offset);
+
+    background: var(--white-smoke);
+    border-radius: 10px;
+    border: var(--rich-black) solid 1px;
+
+    width: calc(100% - var(--calculated-left-offset) * 2);
+    height: fit-content;
 }
